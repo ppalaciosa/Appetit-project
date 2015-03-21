@@ -5,4 +5,6 @@
     <string name="cardinal_east">E</string>
     <string name="cardinal_south">S</string>
     <string name="cardinal_west">W</string>
+    <string name="altitudeButtonLabel">Update Altitude</string>
+    <string name="altitudeLabel">Altitude in \n 5 minutes</string>
 </resources>

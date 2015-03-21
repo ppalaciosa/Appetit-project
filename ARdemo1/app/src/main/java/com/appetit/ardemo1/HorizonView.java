@@ -15,6 +15,7 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -92,14 +93,15 @@ public class HorizonView extends View {
         initCompassView();
     }
 
-    // initCompassView
+// initCompassView
 
     protected void initCompassView() {
         setFocusable(true);
         Resources r = this.getResources();
 
         circlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        circlePaint.setColor(R.color.background_color);
+        // Transparent Compass
+        circlePaint.setColor(R.color.transparent_color);
         circlePaint.setStrokeWidth(1);
         circlePaint.setStyle(Paint.Style.STROKE);
 
@@ -112,18 +114,22 @@ public class HorizonView extends View {
         textHeight = (int) textPaint.measureText("yY");
 
         markerPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        markerPaint.setColor(r.getColor(R.color.marker_color));
+        // Transparent Compass
+        markerPaint.setColor(r.getColor(R.color.transparent_color));
         markerPaint.setAlpha(200);
         markerPaint.setStrokeWidth(1);
         markerPaint.setStyle(Paint.Style.STROKE);
-        markerPaint.setShadowLayer(2, 1, 1, r.getColor(R.color.shadow_color));
+        // Transparent Compass
+        markerPaint.setShadowLayer(2, 1, 1, r.getColor(R.color.transparent_color));
         borderGradientColors = new int[4];
         borderGradientPositions = new float[4];
 
-        borderGradientColors[3] = r.getColor(R.color.outer_border);
-        borderGradientColors[2] = r.getColor(R.color.inner_border_one);
-        borderGradientColors[1] = r.getColor(R.color.inner_border_two);
-        borderGradientColors[0] = r.getColor(R.color.inner_border);
+        // Transparent Compass
+        borderGradientColors[3] = r.getColor(R.color.transparent_color);
+        borderGradientColors[2] = r.getColor(R.color.transparent_color);
+        borderGradientColors[1] = r.getColor(R.color.transparent_color);
+        borderGradientColors[0] = r.getColor(R.color.transparent_color);
+
         borderGradientPositions[3] = 0.0f;
         borderGradientPositions[2] = 1 - 0.03f;
         borderGradientPositions[1] = 1 - 0.06f;
@@ -149,11 +155,11 @@ public class HorizonView extends View {
         glassGradientPositions[1] = 1 - 0.20f;
         glassGradientPositions[0] = 1 - 1.0f;
 
-        skyHorizonColorFrom = r.getColor(R.color.horizon_sky_from);
-        skyHorizonColorTo = r.getColor(R.color.horizon_sky_to);
-
-        groundHorizonColorFrom = r.getColor(R.color.horizon_ground_from);
-        groundHorizonColorTo = r.getColor(R.color.horizon_ground_to);
+        // Transparent Compass
+        skyHorizonColorFrom = r.getColor(R.color.transparent_color);
+        skyHorizonColorTo = r.getColor(R.color.transparent_color);
+        groundHorizonColorFrom = r.getColor(R.color.transparent_color);
+        groundHorizonColorTo = r.getColor(R.color.transparent_color);
     }
 
 // Calculating the size of the Compass
@@ -235,23 +241,28 @@ public class HorizonView extends View {
              if (rollDegree < -180) rollDegree = 180 - (rollDegree + 180);
          }
 
+
          Path skyPath = new Path();
-         skyPath.addArc(innerBoundingBox, -tiltDegree, (180 + (2 * tiltDegree)));
-         canvas.rotate(-rollDegree, px, py);
+         // Update to work with the landscape orientation
+         skyPath.addArc(innerBoundingBox, -rollDegree, (180 + (2 * rollDegree)));
+         canvas.rotate(-tiltDegree, px, py);
          canvas.drawOval(innerBoundingBox, groundPaint);
          canvas.drawPath(skyPath, skyPaint);
-
          canvas.drawPath(skyPath, markerPaint);
          int markWidth = radius / 3;
          int startX = center.x - markWidth;
          int endX = center.x + markWidth;
 
+         // Update to work with the landscape orientation
+         Log.d("PAARV ", "Roll " + String.valueOf(rollDegree));
+         Log.d("PAARV ", "Pitch " + String.valueOf(tiltDegree));
+
          double h = innerRadius*Math.cos(Math.toRadians(90-tiltDegree));
-         double justTiltY = center.y - h;
+         double justTiltX = center.x - h; // y -> x
 
          float pxPerDegree = (innerBoundingBox.height()/2)/45f;
-         for (int i = 90; i >= -90; i -= 10) {
-             double ypos = justTiltY + i * pxPerDegree;
+         for (int i = 90; i >= -90; i -= 10) { // y -> x
+             double ypos = justTiltX + i * pxPerDegree;
 
              if ((ypos < (innerBoundingBox.top + textHeight)) ||
                      (ypos > innerBoundingBox.bottom - textHeight))
@@ -272,10 +283,8 @@ public class HorizonView extends View {
 
          markerPaint.setStrokeWidth(2);
          canvas.drawLine(center.x - radius / 2,
-                 (float)justTiltY,
-                 center.x + radius / 2,
-                 (float)justTiltY,
-                 markerPaint);
+                 (float)justTiltX, center.x + radius / 2,
+                 (float)justTiltX, markerPaint);
          markerPaint.setStrokeWidth(1);
 
          Path rollArrow = new Path();

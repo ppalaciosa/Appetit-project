@@ -1,61 +1,62 @@
 package com.appetit.ardemo1;
 
-import android.app.Activity;
+
 import android.content.Context;
+import android.hardware.Camera;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.support.v7.app.ActionBarActivity;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
 
 
-public class AHactivity extends Activity {
-    float[] aValues = new float[3];
-    float[] mValues = new float[3];
-    HorizonView horizonView;
-    SensorManager sensorManager;
+public class AHactivity extends HVdependencies {
+
 
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_ahactivity);
 
-        horizonView = (HorizonView)this.findViewById(R.id.horizonView);
-        sensorManager =
-                (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        inPreview = false;
+
+        cameraPreview = (SurfaceView) findViewById(R.id.cameraPreview);
+        previewHolder = cameraPreview.getHolder();
+        previewHolder.addCallback(surfaceCallback);
+        previewHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+
+        altitudeValue = (TextView) findViewById(R.id.altitudeValue);
+
+        updateAltitudeButton = (Button) findViewById(R.id.altitudeUpdateButton);
+        updateAltitudeButton.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View arg0) {
+                updateAltitude();
+            }
+
+        });
+
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 2,
+                locationListener);
+
+
+        horizonView = (HorizonView) this.findViewById(R.id.horizonView);
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         updateOrientation(new float[] {0, 0, 0});
-    }
+    };
 
 
-    private void updateOrientation(float[] values) {
-        if (horizonView!= null) {
-            horizonView.setBearing(values[0]);
-            horizonView.setPitch(values[1]);
-            horizonView.setRoll(-values[2]);
-            horizonView.invalidate();
-        }
-    }
-
-    private float[] calculateOrientation() {
-        float[] values = new float[3];
-        float[] R = new float[9];
-        float[] outR = new float[9];
-
-
-        SensorManager.getRotationMatrix(R, null, aValues, mValues);
-        SensorManager.remapCoordinateSystem(R, SensorManager.AXIS_X,
-                SensorManager.AXIS_Z, outR);
-
-        SensorManager.getOrientation(outR, values);
-        values[0] = (float) Math.toDegrees(values[0]);
-        values[1] = (float) Math.toDegrees(values[1]);
-        values[2] = (float) Math.toDegrees(values[2]);
-
-        return values;
-    }
 
     private final SensorEventListener sensorEventListener = new
             SensorEventListener() {
@@ -82,17 +83,28 @@ public class AHactivity extends Activity {
         sensorManager.registerListener(sensorEventListener, magField,
                 SensorManager.SENSOR_DELAY_FASTEST);
 
+        camera=Camera.open();
 
-        sensorManager.registerListener(sensorEventListener, accelerometer,
-                SensorManager.SENSOR_DELAY_FASTEST);
-        sensorManager.registerListener(sensorEventListener, magField,
-                SensorManager.SENSOR_DELAY_FASTEST);
     }
 
     @Override
     protected void onStop() {
         sensorManager.unregisterListener(sensorEventListener);
         super.onStop();
+    }
+
+
+    @Override
+    public void onPause() {
+        if (inPreview) {
+            camera.stopPreview();
+        }
+        sensorManager.unregisterListener(sensorEventListener);
+        camera.release();
+        camera=null;
+        inPreview=false;
+
+        super.onPause();
     }
 }
 
