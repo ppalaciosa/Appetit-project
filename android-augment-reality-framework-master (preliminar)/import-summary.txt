@@ -1,0 +1,148 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .gitignore
+* .idea/
+* .idea/.name
+* .idea/android-augment-reality-framework-master.iml
+* .idea/compiler.xml
+* .idea/copyright/
+* .idea/copyright/profiles_settings.xml
+* .idea/encodings.xml
+* .idea/misc.xml
+* .idea/modules.xml
+* .idea/scopes/
+* .idea/scopes/scope_settings.xml
+* .idea/vcs.xml
+* .idea/workspace.xml
+* LICENSE
+* README.md
+* create_javadocs.sh
+* default.properties
+* javadocs/
+* javadocs/allclasses-frame.html
+* javadocs/allclasses-noframe.html
+* javadocs/com/
+* javadocs/com/jwetherell/
+* javadocs/com/jwetherell/augmented_reality/
+* javadocs/com/jwetherell/augmented_reality/BuildConfig.html
+* javadocs/com/jwetherell/augmented_reality/R.attr.html
+* javadocs/com/jwetherell/augmented_reality/R.drawable.html
+* javadocs/com/jwetherell/augmented_reality/R.html
+* javadocs/com/jwetherell/augmented_reality/R.id.html
+* javadocs/com/jwetherell/augmented_reality/R.menu.html
+* javadocs/com/jwetherell/augmented_reality/R.string.html
+* javadocs/com/jwetherell/augmented_reality/activity/
+* javadocs/com/jwetherell/augmented_reality/activity/AugmentedReality.html
+* javadocs/com/jwetherell/augmented_reality/activity/AugmentedView.html
+* javadocs/com/jwetherell/augmented_reality/activity/Demo.html
+* javadocs/com/jwetherell/augmented_reality/activity/SensorsActivity.html
+* javadocs/com/jwetherell/augmented_reality/activity/package-frame.html
+* javadocs/com/jwetherell/augmented_reality/activity/package-summary.html
+* javadocs/com/jwetherell/augmented_reality/activity/package-tree.html
+* javadocs/com/jwetherell/augmented_reality/camera/
+* javadocs/com/jwetherell/augmented_reality/camera/CameraCompatibility.html
+* javadocs/com/jwetherell/augmented_reality/camera/CameraModel.html
+* javadocs/com/jwetherell/augmented_reality/camera/CameraSurface.html
+* javadocs/com/jwetherell/augmented_reality/camera/package-frame.html
+* javadocs/com/jwetherell/augmented_reality/camera/package-summary.html
+* javadocs/com/jwetherell/augmented_reality/camera/package-tree.html
+* javadocs/com/jwetherell/augmented_reality/common/
+* javadocs/com/jwetherell/augmented_reality/common/Calculator.html
+* javadocs/com/jwetherell/augmented_reality/common/LowPassFilter.html
+* javadocs/com/jwetherell/augmented_reality/common/Matrix.html
+* javadocs/com/jwetherell/augmented_reality/common/PitchAzimuthCalculator.html
+* javadocs/com/jwetherell/augmented_reality/common/PitchBearingCalculator.html
+* javadocs/com/jwetherell/augmented_reality/common/Utilities.html
+* javadocs/com/jwetherell/augmented_reality/common/Vector.html
+* javadocs/com/jwetherell/augmented_reality/common/package-frame.html
+* javadocs/com/jwetherell/augmented_reality/common/package-summary.html
+* javadocs/com/jwetherell/augmented_reality/common/package-tree.html
+* javadocs/com/jwetherell/augmented_reality/data/
+* javadocs/com/jwetherell/augmented_reality/data/ARData.html
+* javadocs/com/jwetherell/augmented_reality/data/BuzzDataSource.html
+* javadocs/com/jwetherell/augmented_reality/data/DataSource.html
+* javadocs/com/jwetherell/augmented_reality/data/GooglePlacesDataSource.html
+* javadocs/com/jwetherell/augmented_reality/data/LocalDataSource.html
+* javadocs/com/jwetherell/augmented_reality/data/NetworkDataSource.html
+* javadocs/com/jwetherell/augmented_reality/data/PhysicalLocation.html
+* javadocs/com/jwetherell/augmented_reality/data/ScreenPosition.html
+* javadocs/com/jwetherell/augmented_reality/data/TwitterDataSource.html
+* javadocs/com/jwetherell/augmented_reality/data/WikipediaDataSource.html
+* javadocs/com/jwetherell/augmented_reality/data/package-frame.html
+* javadocs/com/jwetherell/augmented_reality/data/package-summary.html
+* javadocs/com/jwetherell/augmented_reality/data/package-tree.html
+* javadocs/com/jwetherell/augmented_reality/package-frame.html
+* javadocs/com/jwetherell/augmented_reality/package-summary.html
+* javadocs/com/jwetherell/augmented_reality/package-tree.html
+* javadocs/com/jwetherell/augmented_reality/ui/
+* javadocs/com/jwetherell/augmented_reality/ui/IconMarker.html
+* javadocs/com/jwetherell/augmented_reality/ui/Marker.html
+* javadocs/com/jwetherell/augmented_reality/ui/Radar.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintableBox.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintableBoxedText.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintableCircle.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintableGps.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintableIcon.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintableLine.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintableObject.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintablePoint.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintablePosition.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintableRadarPoints.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/PaintableText.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/package-frame.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/package-summary.html
+* javadocs/com/jwetherell/augmented_reality/ui/objects/package-tree.html
+* javadocs/com/jwetherell/augmented_reality/ui/package-frame.html
+* javadocs/com/jwetherell/augmented_reality/ui/package-summary.html
+* javadocs/com/jwetherell/augmented_reality/ui/package-tree.html
+* javadocs/com/jwetherell/augmented_reality/widget/
+* javadocs/com/jwetherell/augmented_reality/widget/VerticalSeekBar.html
+* javadocs/com/jwetherell/augmented_reality/widget/VerticalTextView.html
+* javadocs/com/jwetherell/augmented_reality/widget/package-frame.html
+* javadocs/com/jwetherell/augmented_reality/widget/package-summary.html
+* javadocs/com/jwetherell/augmented_reality/widget/package-tree.html
+* javadocs/constant-values.html
+* javadocs/deprecated-list.html
+* javadocs/help-doc.html
+* javadocs/index-all.html
+* javadocs/index.html
+* javadocs/overview-frame.html
+* javadocs/overview-summary.html
+* javadocs/overview-tree.html
+* javadocs/package-list
+* javadocs/resources/
+* javadocs/resources/inherit.gif
+* javadocs/stylesheet.css
+* proguard.cfg
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
