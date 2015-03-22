@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/media/pablo/HP v220w/Version3/android-augment-reality-framework-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="/media/pablo/HP v220w/Version3/android-augment-reality-framework-master/app/build/intermediates/pre-dexed/debug/classes-a11860a7f3f31d6285dfbadd50e584cddc691b21.jar" />
+    </item>
+    <item
+        jar="/home/pablo/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="/media/pablo/HP v220w/Version3/android-augment-reality-framework-master/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-4af25e773f4c9a67388b50b97d7a3e097f853a7a.jar" />
+    </item>
+    <item
+        jar="/home/pablo/AndroidStudioProjects/android-augment-reality-framework-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/home/pablo/AndroidStudioProjects/android-augment-reality-framework-master/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-0d986ff5d97af36f3d91771fdb8cdd0da5a9739f.jar" />
+    </item>
+    <item
+        jar="/home/pablo/AndroidStudioProjects/android-augment-reality-framework-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="/home/pablo/AndroidStudioProjects/android-augment-reality-framework-master/app/build/intermediates/pre-dexed/debug/classes-09100e24284652e7c6f187de38a206bf00b5b692.jar" />
+    </item>
+    <item
+        jar="/media/pablo/HP v220w/Version3/android-augment-reality-framework-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/media/pablo/HP v220w/Version3/android-augment-reality-framework-master/app/build/intermediates/pre-dexed/debug/classes-b0c9ebb76747c8e43ae7892acad956d79096f17f.jar" />
+    </item>
+    <item
+        jar="/media/pablo/HP v220w/Version3/android-augment-reality-framework-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/media/pablo/HP v220w/Version3/android-augment-reality-framework-master/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-f62926e2b89e7e8b959813532b7896085fb44b43.jar" />
+    </item>
+    <item
+        jar="/home/pablo/AndroidStudioProjects/android-augment-reality-framework-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/home/pablo/AndroidStudioProjects/android-augment-reality-framework-master/app/build/intermediates/pre-dexed/debug/classes-4f94fa00283c69f2a841fe3ea314ee6fd5655bed.jar" />
+    </item>
+
+</items>
